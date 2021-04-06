@@ -5,21 +5,25 @@ const visitModel = require('../models/visit.model');
 // create a new visit in the database
 exports.createVisit = async (req, res) =>
 {
-    const {visitor, visited, email, phone, address} = req.body;
+    const {visitor, visited, organization, relationship, reason, a_time, d_time, duration} = req.body;
     
     try {
         const newVisit = new visitModel({
             visitor,
-            visited,
-            email,
-            phone,
-            address
+			visited,
+			organization,
+			relationship,
+            reason,
+            a_time,
+			d_time,
+			duration,
         });
         
         const savedVisit = await newVisit.save();
         res.status(201).json(savedVisit);
     } catch (error) {
         res.status(409).json({msg: error.message});
+        console.log(error);
     }
 }
 

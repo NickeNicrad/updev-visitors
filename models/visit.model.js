@@ -5,7 +5,7 @@ const visitSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    visiting: {
+    visited: {
         type: String,
         required: true
     },

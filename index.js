@@ -20,7 +20,7 @@ app.use(cors());
 // init all routes
 app.use('/auth', authRoutes);
 app.use('/visitors', visitorsRoutes);
-// app.use('/visits', visitsRoutes);
+app.use('/visits', visitsRoutes);
 
 // connecting to a mongo database
 mongoose.connect(process.env.DB_CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true})
