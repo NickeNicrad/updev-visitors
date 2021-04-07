@@ -16,17 +16,17 @@ const visitSchema = mongoose.Schema({
     relationship: {
         type: String
     },
-    a_time: {
+    startTime: {
         type: Date,
-        default: '00'
+        default: Date.now()
     },
-    d_time: {
+    stopTime: {
         type: Date,
-        default: '00'
+        default: Date.now()
     },
     duration: {
         type: [],
-        default: '00'
+        default: []
     },
     organization: {
         type: String,

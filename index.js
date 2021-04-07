@@ -25,5 +25,5 @@ app.use('/visits', visitsRoutes);
 // connecting to a mongo database
 mongoose.connect(process.env.DB_CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => app.listen(PORT, () => console.log('database successfully connected\nserver runnig on port: ', PORT)))
-    .then((err) => console.log(err.message));
+    .catch((err) => console.log("database not connected! ", err.message));
 mongoose.set('useFindAndModify', false);
