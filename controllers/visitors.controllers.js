@@ -39,7 +39,6 @@ exports.getAllVisitors = async (req, res) => {
 // get a single visitor from the database
 exports.getVisitor = async (req, res) => {
     const {id} = req.params;
-    console.log(id);
     try {
         const visitor = await visitors.findById(id);
         res.status(200).json(visitor);

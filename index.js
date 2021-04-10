@@ -6,6 +6,7 @@ const app = express();
 const authRoutes = require('./routes/auth.routes');
 const visitorsRoutes = require('./routes/visitors.routes');
 const visitsRoutes = require('./routes/visit.routes');
+const userRoutes = require('./routes/user.routes');
 const dotenv = require('dotenv');
 dotenv.config({path: './.env'});
 
@@ -21,6 +22,7 @@ app.use(cors());
 app.use('/auth', authRoutes);
 app.use('/visitors', visitorsRoutes);
 app.use('/visits', visitsRoutes);
+app.use('/user', userRoutes);
 
 // connecting to a mongo database
 mongoose.connect(process.env.DB_CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true})

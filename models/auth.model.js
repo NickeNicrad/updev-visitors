@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 const authSchema = new mongoose.Schema({
+    pr_image: {
+        type: String
+    },
     fname: {
         type: String
     },
@@ -13,6 +16,12 @@ const authSchema = new mongoose.Schema({
     },
     password: {
         required: true,
+        type: String
+    },
+    address: {
+        type: String
+    },
+    phone: {
         type: String
     },
     createdAt: {
