@@ -5,8 +5,8 @@ const authenticated = require('../middleware/auth.middleware');
 
 router.get('/', getAllVisits);
 
-router.post('/', authenticated, createVisit);
+router.post('/', createVisit);
 
-router.patch('/:id', authenticated, updataVisit);
+router.patch('/:id', updataVisit);
 
 module.exports = router;

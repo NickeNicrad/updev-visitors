@@ -11,7 +11,6 @@ exports.createVisitor = async (req, res) => {
             if (visitor) return res.status(409).json({msg: 'email already exist'});
 
             const newVisitor = new visitors({
-                creatorId: req.userId,
                 fname,
                 lname,
                 email,

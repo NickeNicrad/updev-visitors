@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const visitorSchema = mongoose.Schema({
-    creatorId: {
-        type: String,
-        required: true
-    },
     fname: {
         type: String,
         required: true
