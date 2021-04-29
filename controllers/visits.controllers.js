@@ -42,12 +42,11 @@ exports.getAllVisits = async (req, res) =>
 // update visit time in the database
 exports.updataVisit = async (req, res) =>
 {
-    const {startTime, stopTime, duration} = req.body;
+    const {startTime, stopTime, duration, visitStarted, stopped} = req.body;
     const {id} = req.params;
 
     try {
-        if (!req.userId) return res.json({msg: "you're not authenticated"});
-        const updatedVisit = await visitModel.findByIdAndUpdate(id, {startTime, stopTime, duration});
+        const updatedVisit = await visitModel.findByIdAndUpdate(id, {visitStarted, stopped, startTime, stopTime, duration});
         res.status(200).json(updatedVisit);
     } catch (error) {
         res.status(404).json({msg: error.message})

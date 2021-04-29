@@ -24,6 +24,14 @@ const visitSchema = mongoose.Schema({
         type: Date,
         default: Date.now()
     },
+    visitStarted: {
+        type: Boolean,
+        default: false,
+    },
+    stopped: {
+        type: Boolean,
+        default: false,
+    },
     duration: {
         type: [],
         default: []
